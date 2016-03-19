@@ -37,6 +37,13 @@ div.tile-horizontal {
 
 }*/
 
+div.tile-vertical {
+    position: relative;
+}
+.ghost-div{
+    position: absolute;
+}
+
 html, body {
     width: 100%;
 }
