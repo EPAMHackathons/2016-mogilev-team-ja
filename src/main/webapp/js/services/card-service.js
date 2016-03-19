@@ -1,11 +1,19 @@
 appServices.factory('cardService', function ($http) {
 
 	return {
-		getCards: function(getCardsCallback) {
+		getFieldCells: function(controllerCallback) {
+			$http.get('/monopoly/json/field.json').then(function(result) {
+				var obj = result.data;
+				var cells = obj.field;
+				controllerCallback(cells);
+			});
+		},
+
+		getCards: function(controllerCallback) {
 			$http.get('/monopoly/json/cards.json').then(function(result) {
-				var cardsObj = result.data;
-				var fieldCards = cardsObj.field;
-				getCardsCallback(fieldCards);
+				var obj = result.data;
+				var cards = obj.cards;
+				controllerCallback(cards);
 			});
 		}
 	};

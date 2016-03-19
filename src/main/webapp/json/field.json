@@ -197,13 +197,13 @@
 		"cell-id":31,
 		"cell-name": "Regent Street",
 		"cell-price": 300,
-		"tile-name":"tile0_14",
+		"tile-name":"tile0_14"
 	},
 	{ 
 		"cell-id":32,
 		"cell-name": "Oxford Street",
 		"cell-price": 300,
-		"tile-name":"tile0_16",
+		"tile-name":"tile0_16"
 	},
 	{ 
 		"cell-id":33,
@@ -216,13 +216,13 @@
 		"cell-id":34,
 		"cell-name": "Bond Street",
 		"cell-price": 320,
-		"tile-name":"tile0_20",
+		"tile-name":"tile0_20"
 	},
 	{ 
 		"cell-id":35,
 		"cell-name": "Liverpool St. Station",
 		"cell-price": 200,
-		"tile-name":"tile0_22",
+		"tile-name":"tile0_22"
 	},
 	{ 
 		"cell-id":36,
@@ -235,7 +235,7 @@
 		"cell-id":37,
 		"cell-name": "Park Lane",
 		"cell-price": 350,
-		"tile-name":"tile0_26",
+		"tile-name":"tile0_26"
 	},
 	{ 
 		"cell-id":38,
@@ -248,8 +248,8 @@
 		"cell-id":39,
 		"cell-name": "Mayfair",
 		"cell-price": 400,
-		"tile-name":"tile0_30",
-	},
+		"tile-name":"tile0_30"
+	}
 	]
 
 }
