@@ -25,6 +25,9 @@ appServices.factory('wsHelper', function () {
 			},
 			connect : function(name, pass, onConnect) { 
 				client.connect(name, pass, onConnect);
+			},
+			getClient: function() {
+				return client;
 			}
 		};
 

@@ -18,8 +18,7 @@ userAppControllers.controller('userAppCtrl', [ '$scope', '$http', 'wsHelper', fu
 			
 			$scope.user = response.data;
 		           
-            $scope.client = wsHelper.createWS('/monopoly/monopoly');
-            $scope.client.connect('guest', 'guest', onConnect);
+            
 			
 			$scope.playerIsCreated = true;
 		
@@ -32,12 +31,27 @@ userAppControllers.controller('userAppCtrl', [ '$scope', '$http', 'wsHelper', fu
 
 		var onConnect = function() {
 
-		$scope.client.subscribe("/topic/startGame", function(message) {
-			console.log("Game is Started For user:"+ message.body);
-			$scope.gameIsStarted = true;
-			$scope.$apply();
-		});
+			$scope.client.subscribe("/topic/startGame", function(message) {
+				console.log("Game is Started For user:"+ message.body);
+				$scope.gameIsStarted = true;
+				$scope.$apply();
+			});
+		};
+		
+		var init = function() {
 
-	};
+			$scope.client = wsHelper.createWS('/monopoly/monopoly');
+            $scope.client.connect('guest', 'guest', onConnect);
+            
+			
+			
+		};
+		
+		init();
+		
+		$scope.throwDice = function() {
+			var stompClient = $scope.client.getClient();
+			stompClient.send("/topic/dice", {}, message);
+		};
 
 }]);

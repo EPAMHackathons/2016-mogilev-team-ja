@@ -32,8 +32,18 @@ function($scope, wsHelper, cardService) {
 
 	cardService.getFieldCells(getCellsCallback);
 	cardService.getCards(getCardsCallback);
+	
+var onConnect = function() {
+$scope.client.subscribe("/topic/dice", function(message) {
+			console.log("DICE IS TROWN:"+ message.body);
+            
+		});
+};
 
-
+$scope.client = wsHelper.createWS('/monopoly/monopoly');
+            $scope.client.connect('guest', 'guest', onConnect);
+            
+            
 
 
 	/*var onMessageCallback = function (event) {
