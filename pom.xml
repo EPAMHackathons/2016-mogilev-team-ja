@@ -184,6 +184,7 @@
                                     <artifactId>jetty-runner</artifactId>
                                     <version>${jetty-runner.version}</version>
                                     <destFileName>jetty-runner.jar</destFileName>
+                                    <outputDirectory>${project.build.directory}/dependency</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
