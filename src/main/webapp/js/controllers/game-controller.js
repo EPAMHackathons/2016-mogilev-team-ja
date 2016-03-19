@@ -1,6 +1,9 @@
-appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', function($scope, $http, wsHelper) {
+'use strict';
 
-	$scope.gameLink = 'Undefined';
+appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', 
+function($scope, $http, wsHelper) {
+
+	$scope.gameLink = 'TEst Undefined';
     $scope.game = {};
     $scope.players = [];
 
@@ -17,7 +20,8 @@ appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', fun
 		});
 	};*/
 
-	var createGame = function() {
+	$scope.createGame1 = function() {
+	var temp='aa';
 		$http({
 			method: 'GET',
 			url: '/monopoly/createGame'
