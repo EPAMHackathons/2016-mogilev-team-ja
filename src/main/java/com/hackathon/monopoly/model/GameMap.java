@@ -1,5 +1,6 @@
 package com.hackathon.monopoly.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ public class GameMap {
 
     private Integer id;
     private List<Cell> fields;
-    private List<Player> players;
+    private List<Player> players = new ArrayList<Player>();
     private List<Card> chance;
     private List<Card> chest;
 

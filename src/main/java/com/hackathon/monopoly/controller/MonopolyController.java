@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
@@ -18,6 +19,7 @@ public class MonopolyController {
     
     
     @RequestMapping(value = "/createGame", method = RequestMethod.GET)
+    @ResponseBody
     public GameMap createGame(){
         return monopolyService.createGame();
     }
@@ -28,6 +30,7 @@ public class MonopolyController {
         return "create-player";
     }
     
+    @ResponseBody
     @RequestMapping(value = "/createPlayer/{name}", method = RequestMethod.GET)
     public Player createPlayer(@PathVariable String name) {
         return monopolyService.createPlayer(name);

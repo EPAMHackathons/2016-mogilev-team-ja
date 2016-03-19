@@ -20,7 +20,7 @@ function($scope, $http, wsHelper) {
 		});
 	};*/
 
-	$scope.createGame1 = function() {
+	$scope.createGame = function() {
 	var temp='aa';
 		$http({
 			method: 'GET',
@@ -29,13 +29,14 @@ function($scope, $http, wsHelper) {
 		}).then(function successCallback(response) {
 			//TODO - subscribe
             $scope.game = response.data;
-            $scope.gameLink = document.location.host + document.location.pathname + "/createPlayer"
+            $scope.gameLink = document.location.host + document.location.pathname + 
+            "createPlayer/" + $scope.game.id;
             
-            $scope.client = wsHelper.createWS('/monopoly/monopoly', onMessageCallback);
+            $scope.client = wsHelper.createWS('/monopoly/monopoly');
             $scope.client.connect('guest', 'guest', onConnect);
 
 		}, function errorCallback(response) {
-			console.log('Error: ' + response);
+			console.log('Error: ' + response.data);
 		});
 	};
     
