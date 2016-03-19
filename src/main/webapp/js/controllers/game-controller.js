@@ -1,5 +1,20 @@
-appControllers.controller('gameController', [ '$scope', function($scope) {
+appControllers.controller('gameController', [ '$scope', '$http', function($scope, $http) {
 
-	//Get game id /create-game
+	$scope.gameLink = 'Undefined';
 
-} ]);
+	var initGameLink = function() {
+		$http({
+			method: 'GET',
+			url: '/monopoly/create-game'
+
+		}).then(function successCallback(response) {
+			$scope.gameLink = response.data;
+
+		}, function errorCallback(response) {
+			console.log('Error: ' + response);
+		});
+	};
+
+	initGameLink();
+
+}]);
