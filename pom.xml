@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>monopoly</name>
+    <name>hak2016mono</name>
 
     <properties>
         <!-- 4.2.5.RELEASE -->

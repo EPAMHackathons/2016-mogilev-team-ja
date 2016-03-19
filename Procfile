@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/monopoly.war
+web: java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/hak2016mono.war
