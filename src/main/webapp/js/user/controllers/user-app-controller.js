@@ -1,4 +1,6 @@
 userAppControllers.controller('userAppCtrl', [ '$scope', '$http', 'wsHelper', function($scope, $http, wsHelper) {
+        $scope.gameIsStarted = false;
+        
         $scope.userName = "Input Name";
 		$scope.user = {};
         
@@ -22,16 +24,14 @@ userAppControllers.controller('userAppCtrl', [ '$scope', '$http', 'wsHelper', fu
 		}, function errorCallback(response) {
 			console.log('Error: ' + response);
 		});
-            
+
         };
-		
-		
-		
+
 		var onConnect = function() {
 
 		$scope.client.subscribe("/topic/startGame", function(message) {
 			console.log("Game is Started For user:"+ message.body);
-			//TODO
+			$scope.gameIsStarted = true;
 		});
 
 	};
