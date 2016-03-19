@@ -6,18 +6,33 @@ function($scope, wsHelper, cardService) {
 	$scope.name = "";
 	$scope.messages = new Array();
 	$scope.participants = new Array();
+	
+	var createMapFromList = function(items, keyProp) {
+		var map = {};
+		angular.forEach(items, function(item) {
+			var key = item[keyProp];
+			map[key] = item;
+		});
+		return map;
+	};
 
 	var getCellsCallback = function(cells) {
 		$scope.cells = cells;
+
+		$scope.cellsMap = createMapFromList($scope.cells, "cellid");
 	};
 
 	var getCardsCallback = function(cardsObj) {
 		$scope.chance = cardsObj.Chance;
 		$scope.chest = cardsObj.Chest;
+
+		$scope.chanceMap = createMapFromList($scope.chance, "id");
+		$scope.chestMap = createMapFromList($scope.chest, "id");
 	};
 
 	cardService.getFieldCells(getCellsCallback);
 	cardService.getCards(getCardsCallback);
+
 
 
 
