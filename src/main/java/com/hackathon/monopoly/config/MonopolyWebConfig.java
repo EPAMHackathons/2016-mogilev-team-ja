@@ -1,6 +1,6 @@
 package com.hackathon.monopoly.config;
 
 
-public class MonopolyWebSocketConfig {
+public class MonopolyWebConfig {
     
 }
