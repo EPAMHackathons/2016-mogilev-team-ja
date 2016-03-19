@@ -21,6 +21,9 @@
         <jdk.version>1.8</jdk.version>
         <maven.compiler.version>3.5.1</maven.compiler.version>
         <maven.war.version>2.6</maven.war.version>
+        <maven.dependency.version>2.10</maven.dependency.version>
+        <jetty-maven.version>9.3.8.v20160314</jetty-maven.version>
+        <jetty-runner.version>9.3.8.v20160314</jetty-runner.version>
     </properties>
 
     <dependencies>
@@ -158,6 +161,37 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty-maven.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven.dependency.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.eclipse.jetty</groupId>
+                                    <artifactId>jetty-runner</artifactId>
+                                    <version>${jetty-runner.version}</version>
+                                    <destFileName>jetty-runner.jar</destFileName>
+                                    <outputDirectory>${project.build.directory}/dependency</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
