@@ -21,3 +21,17 @@
 .col-10 {width: 90.91%;}
 .col-11 {width: 100%;}
 .col-1_64 {width: 14.91%;}
+
+div.tile-square {
+    height: 184px;
+    width: 187px;
+}
+div.tile-vertical {
+    height: 184px;
+    width: 114px;
+}
+div.tile-horizontal {
+    height: 114px;
+    width: 187px;
+
+}
