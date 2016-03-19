@@ -1,5 +1,6 @@
 userAppControllers.controller('userAppCtrl', [ '$scope', '$http', 'wsHelper', function($scope, $http, wsHelper) {
         $scope.gameIsStarted = false;
+		$scope.playerIsCreated = false;
         
         $scope.userName = "Input Name";
 		$scope.user = {};
@@ -19,6 +20,8 @@ userAppControllers.controller('userAppCtrl', [ '$scope', '$http', 'wsHelper', fu
 		           
             $scope.client = wsHelper.createWS('/monopoly/monopoly');
             $scope.client.connect('guest', 'guest', onConnect);
+			
+			$scope.playerIsCreated = true;
 		
 
 		}, function errorCallback(response) {
@@ -32,6 +35,7 @@ userAppControllers.controller('userAppCtrl', [ '$scope', '$http', 'wsHelper', fu
 		$scope.client.subscribe("/topic/startGame", function(message) {
 			console.log("Game is Started For user:"+ message.body);
 			$scope.gameIsStarted = true;
+			$scope.$apply();
 		});
 
 	};
