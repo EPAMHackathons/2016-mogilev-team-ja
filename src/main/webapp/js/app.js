@@ -5,9 +5,8 @@
 angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers','luegg.directives']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/monopoly-field', {templateUrl: 'partials/monopoly-field.html', controller: 'monopolyFieldController'});
-    $routeProvider.otherwise({redirectTo: '/monopoly-field'});
-
     $routeProvider.when('/create-game', {templateUrl: 'partials/create-game.html', controller: 'gameController'});
+    $routeProvider.otherwise({redirectTo: '/create-game'});
   }]);
 
 var appServices = angular.module('myApp.services', []);

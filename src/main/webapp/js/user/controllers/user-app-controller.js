@@ -1,5 +1,6 @@
 userAppControllers.controller('userAppCtrl', [ '$scope', '$http', 'wsHelper', function($scope, $http, wsHelper) {
-        $scope.userName = "ToDo";
+        $scope.userName = "Input Name";
+		$scope.user = {};
         
         $scope.createPlayer = function() {
             console.log("Strt createing player...");
@@ -9,19 +10,30 @@ userAppControllers.controller('userAppCtrl', [ '$scope', '$http', 'wsHelper', fu
 			url: '/monopoly/createPlayer/' + $scope.userName
 
 		}).then(function successCallback(response) {
-			//TODO - subscribe
-            /*$scope.game = response.data;
-            $scope.gameLink = document.location.host + document.location.pathname + "/createPlayer"
-            
-            $scope.client = wsHelper.createWS('/monopoly/monopoly', onMessageCallback);
-            $scope.client.connect('guest', 'guest', onConnect);*/
         
-        console.log('Player is created: ' + response.data);
+			console.log('Player is created: ' + response.data);
+			
+			$scope.user = response.data;
+		           
+            $scope.client = wsHelper.createWS('/monopoly/monopoly');
+            $scope.client.connect('guest', 'guest', onConnect);
+		
 
 		}, function errorCallback(response) {
 			console.log('Error: ' + response);
 		});
             
         };
+		
+		
+		
+		var onConnect = function() {
+
+		$scope.client.subscribe("/topic/startGame", function(message) {
+			console.log("Game is Started For user:"+ message.body);
+			//TODO
+		});
+
+	};
 
 }]);
