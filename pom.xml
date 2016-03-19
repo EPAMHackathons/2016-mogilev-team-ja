@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>monopoly</name>
+    <name>hak2016mono</name>
 
     <properties>
         <!-- 4.2.5.RELEASE -->
@@ -24,7 +24,6 @@
         <maven.war.version>2.6</maven.war.version>
         <maven.dependency.version>2.10</maven.dependency.version>
         <jetty-maven.version>9.3.8.v20160314</jetty-maven.version>
-        <jetty-runner.version>9.3.8.v20160314</jetty-runner.version>
     </properties>
 
     <dependencies>
@@ -124,7 +123,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        
+
     </dependencies>
 
     <repositories>
@@ -172,6 +171,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>${maven.war.version}</version>
                 <configuration>
+                    <warName>${project.name}</warName>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
                 <executions>
@@ -185,37 +185,43 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.3</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals><goal>copy</goal></goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.eclipse.jetty</groupId>
-                                    <artifactId>jetty-runner</artifactId>
-                                    <version>9.3.8.v20160314</version>
-                                    <destFileName>jetty-runner.jar</destFileName>
-                                    <!--<outputDirectory>${project.build.directory}</outputDirectory>-->
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <!--<plugin>
-                 <groupId>org.eclipse.jetty</groupId>
-                 <artifactId>jetty-maven-plugin</artifactId>
-                 <version>${jetty-maven.version}</version>
-             </plugin>-->
 
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>heroku</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>2.10</version>
+                        <executions>
+                            <execution>
+                                <id>copy-dependencies</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>com.github.jsimone</groupId>
+                                            <artifactId>webapp-runner</artifactId>
+                                            <version>8.0.30.2</version>
+                                            <destFileName>webapp-runner.jar</destFileName>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
 
