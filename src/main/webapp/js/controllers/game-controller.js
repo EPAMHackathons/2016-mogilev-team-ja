@@ -1,8 +1,12 @@
-appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', function($scope, $http, wsHelper) {
+'use strict';
 
-	$scope.gameLink = 'Undefined';
+appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', '$location',
+function($scope, $http, wsHelper, $location) {
+
+	$scope.gameLink = 'TEst Undefined';
     $scope.game = {};
     $scope.players = [];
+	$scope.count = 0;
 
 	/*var initGameLink = function() {
 		$http({
@@ -17,7 +21,8 @@ appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', fun
 		});
 	};*/
 
-	var createGame = function() {
+	$scope.createGame = function() {
+	var temp='aa';
 		$http({
 			method: 'GET',
 			url: '/monopoly/createGame'
@@ -25,13 +30,14 @@ appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', fun
 		}).then(function successCallback(response) {
 			//TODO - subscribe
             $scope.game = response.data;
-            $scope.gameLink = document.location.host + document.location.pathname + "/createPlayer"
+            $scope.gameLink = document.location.host + document.location.pathname + 
+            "game/" + $scope.game.id;
             
-            $scope.client = wsHelper.createWS('/monopoly/monopoly', onMessageCallback);
+            $scope.client = wsHelper.createWS('/monopoly/monopoly');
             $scope.client.connect('guest', 'guest', onConnect);
 
 		}, function errorCallback(response) {
-			console.log('Error: ' + response);
+			console.log('Error: ' + response.data);
 		});
 	};
     
@@ -39,14 +45,16 @@ appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', fun
 	//subscribe on all
 		$scope.client.subscribe("/topic/updateParticipants", function(message) {
 			console.log("New Participant:"+ message.body);
-            $scope.players.add(JSON.parse(message.body));
-			//$scope.messages.push(JSON.parse(message.body));
+            $scope.players.push(JSON.parse(message.body));
+			$scope.count++;
 		});
-		//send Message to Server, request place
-		
-	};
 
-	//2016-mogilev-team-ja, angular-ws
+		$scope.client.subscribe("/topic/startGame", function(message) {
+			console.log("Game is Started:"+ message.body);
+			$scope.$apply(function() { $location.path("/monopoly-field"); });
+		});
+
+	};
 	
 
 

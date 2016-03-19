@@ -1,7 +1,8 @@
 * {
     box-sizing: border-box;
 }
-.row:after {
+.row1:before,
+.row1:after{
     content: "";
     clear: both;
     display: block;
@@ -21,3 +22,51 @@
 .col-10 {width: 90.91%;}
 .col-11 {width: 100%;}
 .col-1_64 {width: 14.91%;}
+
+/*div.tile-square {
+    height: 184px;
+    width: 187px;
+}
+div.tile-vertical {
+    height: 184px;
+    width: 114px;
+}
+div.tile-horizontal {
+    height: 114px;
+    width: 187px;
+
+}*/
+
+html, body {
+    width: 100%;
+}
+.container1 {
+    width: 1400px;
+    min-width: 1400px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#row1, #row2{
+    height: 184px;
+}
+
+#row1 > div, #row3 > div {
+    float: left;
+}
+
+.col-left, .col-center {
+    float:left;
+}
+.col-right {
+    float: right;
+}
+
+.col-left, .col-right {
+    width: 187px;
+}
+
+.col-center {
+    min-width: 1026px;
+}

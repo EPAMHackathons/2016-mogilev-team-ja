@@ -8,9 +8,6 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
     $routeProvider.otherwise({redirectTo: '/monopoly-field'});
 
     $routeProvider.when('/create-game', {templateUrl: 'partials/create-game.html', controller: 'gameController'});
-
-    //$routeProvider.when('/create-game', {templateUrl: 'partials/create-game.html', controller: 'gameController'});
-    //$routeProvider.when('/create-game', {templateUrl: 'partials/create-game.html', controller: 'gameController'});
   }]);
 
 var appServices = angular.module('myApp.services', []);

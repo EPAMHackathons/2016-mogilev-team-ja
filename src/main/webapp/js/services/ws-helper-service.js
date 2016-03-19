@@ -1,6 +1,6 @@
 appServices.factory('wsHelper', function () {
 
-	var createWS = function(endpointStr, onMessageCallback) {
+	var createWS = function(endpointStr) {
 
 		var socket = new SockJS(endpointStr);
 		var client = Stomp.over(socket);

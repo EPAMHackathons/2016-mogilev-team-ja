@@ -1,74 +1,126 @@
 
 <div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Monopoly</a>
-		</div>
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#/view1">Home</a></li>
-				<li><a href="logout.html">Logout ({{name}})</a></li>
-			</ul>
-		</div>
-		<!--/.navbar-collapse -->
-	</div>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Monopoly</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/view1">Home</a></li>
+                <li><a href="logout.html">Logout ({{name}})</a></li>
+            </ul>
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
 </div>
 
-<div class="container">
-	<hr />
-	
-	<div class="field">
-		<div ng-repeat="cell in cells">{{cell["cell-name"]}}</div>
-	</div>
-	
-	<div class="field">
-		<div ng-repeat="card in chance">{{card.description}}</div>
-	</div>
-	
-	<div class="field">
-		<div ng-repeat="card in chest">{{card.description}}</div>
-	</div>
-	
-	
-	
-	
-	<div>Cell Map: 
-		<div ng-repeat="key in cellsMap">Key: {{key}}, Value: {{cellsMap[key]}}</div>
-	</div>
-	
-	<div>Chance Map: 
-		<div ng-repeat="key in chanceMap">Key: {{key}}, Value: {{chanceMap[key]}}</div>
-	</div>
-	
-	<div>Chest Map: 
-		<div ng-repeat="key in chestMap">Key: {{key}}, Value: {{chestMap[key]}}</div>
-	</div>
-	
+<div class="container1">
+    <hr />
 
-	<div class="chatparticipants">
-		<ul class="list-unstyled">
-			<li ng-repeat="p in participants | orderBy:'name'"><span class="chatname">{{p.name}}</span></li>
-		</ul>
-	</div>
+    <div class="field">
+        <!--<div ng-repeat="cell in cells" style="background:url(images/{{cell.tileName}}.gif) no-repeat;height:184px;width:184px">{{cell["cellName"]}}</div>-->
+        <div id="row1" class="row1">
+            <div  class="tile-square"><img src="images/{{cellsMap[20].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[21].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[22].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[23].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[24].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[25].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[26].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[27].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[28].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[29].tileName}}.gif"></div>
+            <div class="tile-square"><img src="images/{{cellsMap[30].tileName}}.gif"></div>
+        </div>
+        <div id="row2" class="row1">
+            <div class="col-left">
+                <div class="tile-vertical"><img src="images/{{cellsMap[19].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[18].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[17].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[16].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[15].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[14].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[13].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[12].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[11].tileName}}.gif"></div>
+            </div>
+            <div class="col-center"></div>
+            <div class="col-right">
+                <div class="tile-vertical"><img src="images/{{cellsMap[31].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[32].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[33].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[34].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[35].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[36].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[37].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[38].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[39].tileName}}.gif"></div>
+            </div>
+        </div>
+        <div id="row3" class="row1">
+            <div class="tile-square"><img src="images/{{cellsMap[10].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[9].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[8].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[7].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[6].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[5].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[4].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[3].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[2].tileName}}.gif"></div>
+            <div class="tile-vertical"><img src="images/{{cellsMap[1].tileName}}.gif"></div>
+            <div class="tile-square"><img src="images/{{cellsMap[0].tileName}}.gif"></div>
 
-	<div class="chatmessages" scroll-glue>
-		<ul class="list-unstyled">
-			<li ng-repeat="m in messages"><span class="chatname" title="{{m.timestamp | date:'medium'}}">{{m.name}}</span>: {{m.message}} </li>
-		</ul>
-	</div>
-	<hr/>
-	<form ng:submit="sendMessage()" class="form-inline">
-		<input type="text" ng-model="message" autofocus="autofocus"/>
-		<button type="button" ng-click="sendMessage()"
-			class="btn btn-default btn-xs">
-			<span class="glyphicon glyphicon-chevron-right"></span> Send
-		</button>
-		<p>{{error}}</p>
-	</form>
+        </div>
+    </div>
+
+    <div class="field">
+        <div ng-repeat="card in chance" hidden>{{card.description}}</div>
+    </div>
+
+    <div class="field">
+        <div ng-repeat="card in chest" hidden>{{card.description}}</div>
+    </div>
+
+
+
+
+    <!--    <div>Cell Map: 
+            <div ng-repeat="key in cellsMap">Key: {{key}}, Value: {{cellsMap[key]}}</div>
+        </div>
+    
+        <div>Chance Map: 
+            <div ng-repeat="key in chanceMap">Key: {{key}}, Value: {{chanceMap[key]}}</div>
+        </div>
+    
+        <div>Chest Map: 
+            <div ng-repeat="key in chestMap">Key: {{key}}, Value: {{chestMap[key]}}</div>
+        </div>-->
+
+
+    <div class="chatparticipants">
+        <ul class="list-unstyled">
+            <li ng-repeat="p in participants| orderBy:'name'"><span class="chatname">{{p.name}}</span></li>
+        </ul>
+    </div>
+
+    <div class="chatmessages" scroll-glue>
+        <ul class="list-unstyled">
+            <li ng-repeat="m in messages"><span class="chatname" title="{{m.timestamp| date:'medium'}}">{{m.name}}</span>: {{m.message}} </li>
+        </ul>
+    </div>
+    <hr/>
+    <form ng-submit="sendMessage()" class="form-inline">
+        <input type="text" ng-model="message" autofocus="autofocus"/>
+        <button type="button" ng-click="sendMessage()"
+                class="btn btn-default btn-xs">
+            <span class="glyphicon glyphicon-chevron-right"></span> Send
+        </button>
+        <p>{{error}}</p>
+    </form>
 </div>
 <!-- /container -->

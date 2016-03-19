@@ -15,6 +15,7 @@ public class MonopolyServiceImpl implements MonopolyService {
     private static final String PARTICIPANTS_UPDATE = "/topic/updateParticipants";
     private static final String REQUEST_EVENT = "/topic/requestEvent";
     private static final String RESPONSE_EVENT = "/topic/responseEvent";
+    private static final String START_GAME = "/topic/startGame";
 
     @Autowired
     private SimpMessageSendingOperations messagingTemplate;
@@ -49,6 +50,13 @@ public class MonopolyServiceImpl implements MonopolyService {
         messagingTemplate.convertAndSend(PARTICIPANTS_UPDATE, player);
         
         return player;
+    }
+    
+    @Override
+    public void startGameIfFull() {
+    	if(game.getPlayers().size() >= 4) {
+    		messagingTemplate.convertAndSend(START_GAME, game);
+    	}
     }
 
     
