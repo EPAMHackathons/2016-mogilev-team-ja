@@ -1,8 +1,8 @@
 package com.hackathon.monopoly.config;
 
 import com.hackathon.monopoly.listeners.MonopolyConnectListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.hackathon.monopoly.services.MonopolyService;
+import com.hackathon.monopoly.services.MonopolyServiceImpl;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,6 +27,11 @@ public class MonopolyWebSocketConfig extends AbstractWebSocketMessageBrokerConfi
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.enableSimpleBroker("/queue", "/topic");
         registry.setApplicationDestinationPrefixes("/app");
+    }
+
+    @Bean
+    public MonopolyService monopolyService() {
+        return new MonopolyServiceImpl();
     }
 
     @Bean

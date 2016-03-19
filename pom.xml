@@ -14,6 +14,7 @@
     <properties>
         <!-- 4.2.5.RELEASE -->
         <org.springframework.version>4.1.0.BUILD-SNAPSHOT</org.springframework.version>
+        <org.springframework.security-version>3.2.3.RELEASE</org.springframework.security-version>
         <jackson-databind.version>2.7.3</jackson-databind.version>
         <org.slf4j.version>1.7.19</org.slf4j.version>
         <log4j.version>1.2.17</log4j.version>
@@ -102,6 +103,28 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${org.springframework.security-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${org.springframework.security-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${org.springframework.security-version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-jdbc</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
     </dependencies>
 
     <repositories>
@@ -162,7 +185,7 @@
                 </executions>
             </plugin>
 
-            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>2.3</version>
@@ -178,7 +201,7 @@
                                     <artifactId>jetty-runner</artifactId>
                                     <version>9.3.8.v20160314</version>
                                     <destFileName>jetty-runner.jar</destFileName>
-                                    <!--<outputDirectory>${project.build.directory}</outputDirectory>-->
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -189,7 +212,7 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jetty-maven.version}</version>
-            </plugin>
+            </plugin>-->
 
         </plugins>
     </build>

@@ -5,11 +5,21 @@ import java.util.List;
 /**
  * Created by irina on 19.03.2016.
  */
-public class Map {
+public class GameMap {
+
+    private Integer id;
     private List<Cell> fields;
     private List<Player> players;
     private List<Card> chance;
     private List<Card> chest;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public List<Cell> getFields() {
         return fields;
