@@ -7,10 +7,19 @@ function($scope, wsHelper, cardService) {
 	$scope.messages = new Array();
 	$scope.participants = new Array();
 
-	var getCardsCallback = function(cards) {
-		$scope.cards = cards;
+	var getCellsCallback = function(cells) {
+		$scope.cells = cells;
 	};
+
+	var getCardsCallback = function(cardsObj) {
+		$scope.chance = cardsObj.Chance;
+		$scope.chest = cardsObj.Chest;
+	};
+
+	cardService.getFieldCells(getCellsCallback);
 	cardService.getCards(getCardsCallback);
+
+
 
 	/*var onMessageCallback = function (event) {
 		console.log('message: ', event.data);
