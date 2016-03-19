@@ -1,0 +1,28 @@
+# Build Artifacts
+build
+target
+out
+*.bak
+*.jar
+*.war
+*.ear
+
+# Eclipse artifacts
+.classpath
+.project
+.settings
+
+# Common
+*.log
+.tmp
+.merge_file*
+coverage
+
+# Netbeans artifacts
+**/nb-configuration.xml
+**/nbactions.xml
+**/logs/*
+
+# IDEA artifacts
+.idea
+*.iml
