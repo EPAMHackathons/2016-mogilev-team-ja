@@ -27,13 +27,15 @@ public class MonopolyController {
     @RequestMapping(value = "/game/{gameId}", method = RequestMethod.GET)
     public String getGame(@PathVariable Integer gameId) {
         
-        return "create-player";
+        return "userPage";
     }
     
     @ResponseBody
     @RequestMapping(value = "/createPlayer/{name}", method = RequestMethod.GET)
     public Player createPlayer(@PathVariable String name) {
-        return monopolyService.createPlayer(name);
+        Player player = monopolyService.createPlayer(name);
+        monopolyService.startGameIfFull();
+        return player;
     }
 
 }

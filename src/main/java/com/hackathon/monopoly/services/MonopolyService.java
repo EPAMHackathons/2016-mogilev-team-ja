@@ -11,4 +11,6 @@ public interface MonopolyService {
     GameMap createGame();
     
     Player createPlayer(String name);
+    
+    public void startGameIfFull();
 }

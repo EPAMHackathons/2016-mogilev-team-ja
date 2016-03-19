@@ -1,11 +1,12 @@
 'use strict';
 
-appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', 
-function($scope, $http, wsHelper) {
+appControllers.controller('gameController', [ '$scope', '$http', 'wsHelper', '$location',
+function($scope, $http, wsHelper, $location) {
 
 	$scope.gameLink = 'TEst Undefined';
     $scope.game = {};
     $scope.players = [];
+	$scope.count = 0;
 
 	/*var initGameLink = function() {
 		$http({
@@ -30,7 +31,7 @@ function($scope, $http, wsHelper) {
 			//TODO - subscribe
             $scope.game = response.data;
             $scope.gameLink = document.location.host + document.location.pathname + 
-            "createPlayer/" + $scope.game.id;
+            "game/" + $scope.game.id;
             
             $scope.client = wsHelper.createWS('/monopoly/monopoly');
             $scope.client.connect('guest', 'guest', onConnect);
@@ -44,14 +45,16 @@ function($scope, $http, wsHelper) {
 	//subscribe on all
 		$scope.client.subscribe("/topic/updateParticipants", function(message) {
 			console.log("New Participant:"+ message.body);
-            $scope.players.add(JSON.parse(message.body));
-			//$scope.messages.push(JSON.parse(message.body));
+            $scope.players.push(JSON.parse(message.body));
+			$scope.count++;
 		});
-		//send Message to Server, request place
-		
-	};
 
-	//2016-mogilev-team-ja, angular-ws
+		$scope.client.subscribe("/topic/startGame", function(message) {
+			console.log("Game is Started:"+ message.body);
+			$scope.$apply(function() { $location.path("/monopoly-field"); });
+		});
+
+	};
 	
 
 
