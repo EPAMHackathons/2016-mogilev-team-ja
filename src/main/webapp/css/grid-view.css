@@ -1,7 +1,8 @@
 * {
     box-sizing: border-box;
 }
-.row:after {
+.row1:before,
+.row1:after{
     content: "";
     clear: both;
     display: block;
@@ -36,8 +37,15 @@ div.tile-horizontal {
 
 }*/
 
-body > .container1 {
-    width: 1600px;
+html, body {
+    width: 100%;
+}
+.container1 {
+    width: 1400px;
+    min-width: 1400px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #row1, #row2{
@@ -48,3 +56,17 @@ body > .container1 {
     float: left;
 }
 
+.col-left, .col-center {
+    float:left;
+}
+.col-right {
+    float: right;
+}
+
+.col-left, .col-right {
+    width: 187px;
+}
+
+.col-center {
+    min-width: 1026px;
+}
