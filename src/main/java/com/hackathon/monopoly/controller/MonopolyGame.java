@@ -1,5 +1,7 @@
-package com.hackathon.monopoly.model;
+package com.hackathon.monopoly.controller;
 
+
+import com.hackathon.monopoly.model.GameMap;
 
 public class MonopolyGame {
     private Integer id;

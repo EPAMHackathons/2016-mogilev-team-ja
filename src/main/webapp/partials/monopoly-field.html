@@ -49,7 +49,9 @@
                 <div class="title"><div class="ghost-div tile-horisontal"></div><img src="images/{{cellsMap[12].tileName}}.gif"></div>
                 <div class="title"><div class="ghost-div tile-horisontal"></div><img src="images/{{cellsMap[11].tileName}}.gif"></div>
             </div>
-            <div class="col-center"></div>
+            <div class="col-center">
+
+            </div>
             <div class="col-right">
                 <div class="title"><div class="ghost-div tile-horisontal"></div><img src="images/{{cellsMap[31].tileName}}.gif"></div>
                 <div class="title"><div class="ghost-div tile-horisontal"></div><img src="images/{{cellsMap[32].tileName}}.gif"></div>
@@ -73,7 +75,11 @@
             <div class="title"><div class="ghost-div tile-vertical"></div><img src="images/{{cellsMap[3].tileName}}.gif"></div>
             <div class="title"><div class="ghost-div tile-vertical"></div><img src="images/{{cellsMap[2].tileName}}.gif"></div>
             <div class="title"><div class="ghost-div tile-vertical"></div><img src="images/{{cellsMap[1].tileName}}.gif"></div>
-            <div class="tile-square"><div class="ghost-div tile-square"></div><img src="images/{{cellsMap[0].tileName}}.gif"></div>
+            <div class="tile-square"><div class="ghost-div tile-square">
+                <div class="player1"></div>
+                <div class="player2"></div>
+                <div class="player3"></div>
+            </div><img src="images/{{cellsMap[0].tileName}}.gif"></div>
 
         </div>
     </div>
@@ -86,41 +92,7 @@
         <div ng-repeat="card in chest" hidden>{{card.description}}</div>
     </div>
 
-
-
-
-    <!--    <div>Cell Map: 
-            <div ng-repeat="key in cellsMap">Key: {{key}}, Value: {{cellsMap[key]}}</div>
-        </div>
-    
-        <div>Chance Map: 
-            <div ng-repeat="key in chanceMap">Key: {{key}}, Value: {{chanceMap[key]}}</div>
-        </div>
-    
-        <div>Chest Map: 
-            <div ng-repeat="key in chestMap">Key: {{key}}, Value: {{chestMap[key]}}</div>
-        </div>-->
-
-
-    <div class="chatparticipants">
-        <ul class="list-unstyled">
-            <li ng-repeat="p in participants| orderBy:'name'"><span class="chatname">{{p.name}}</span></li>
-        </ul>
-    </div>
-
-    <div class="chatmessages" scroll-glue>
-        <ul class="list-unstyled">
-            <li ng-repeat="m in messages"><span class="chatname" title="{{m.timestamp| date:'medium'}}">{{m.name}}</span>: {{m.message}} </li>
-        </ul>
-    </div>
     <hr/>
-    <form ng-submit="sendMessage()" class="form-inline">
-        <input type="text" ng-model="message" autofocus="autofocus"/>
-        <button type="button" ng-click="sendMessage()"
-                class="btn btn-default btn-xs">
-            <span class="glyphicon glyphicon-chevron-right"></span> Send
-        </button>
-        <p>{{error}}</p>
-    </form>
+
 </div>
 <!-- /container -->

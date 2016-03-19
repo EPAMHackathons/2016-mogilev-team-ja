@@ -1,7 +1,6 @@
 package com.hackathon.monopoly.services;
 
 import com.hackathon.monopoly.model.GameMap;
-import com.hackathon.monopoly.model.MonopolyGame;
 import com.hackathon.monopoly.model.Player;
 import java.util.HashMap;
 import java.util.Map;
