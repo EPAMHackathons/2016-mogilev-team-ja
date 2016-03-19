@@ -22,7 +22,7 @@
 .col-11 {width: 100%;}
 .col-1_64 {width: 14.91%;}
 
-div.tile-square {
+/*div.tile-square {
     height: 184px;
     width: 187px;
 }
@@ -34,4 +34,17 @@ div.tile-horizontal {
     height: 114px;
     width: 187px;
 
+}*/
+
+body > .container1 {
+    width: 1600px;
 }
+
+#row1, #row2{
+    height: 184px;
+}
+
+#row1 > div, #row3 > div {
+    float: left;
+}
+

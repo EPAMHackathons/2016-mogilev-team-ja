@@ -53,3 +53,11 @@
 .field {
 	padding: 1em;
 }
+
+#row1{
+    
+}
+
+#row1 > div, #row3 ~ div {
+    display: inline-block;
+}
