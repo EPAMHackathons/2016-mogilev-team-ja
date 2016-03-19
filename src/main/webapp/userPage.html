@@ -12,10 +12,19 @@ and open the template in the editor.
     </head>
     <body ng-controller="userAppCtrl">
         
-        <div>TODO write content</div>
+        <div>User Page</div>
         
-        <input name="username" type="text" class="form-control" placeholder="User Name" required autofocus ng-model="userName">
-        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="createPlayer()">Create Player</button>
+        <div ng-if="!gameIsStarted">
+        	<input name="username" type="text" class="form-control" placeholder="User Name" required autofocus ng-model="userName">
+        	<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="createPlayer()">Create Player</button>
+        </div>
+        
+        
+        <div ng-if="gameIsStarted">
+        	GAME IS STARTED!
+        </div>
+        
+       
         
 	  <script src="../lib/jquery/jquery.js"></script>
 	  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
