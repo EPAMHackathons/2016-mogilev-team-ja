@@ -2,10 +2,11 @@ appControllers.controller('gameController', [ '$scope', '$http', function($scope
 
 	$scope.gameLink = 'Undefined';
 
-	var createGame = function() {
+
+	var initGameLink = function() {
 		$http({
 			method: 'GET',
-			url: '/monopoly/create-game'
+			url: '/monopoly/init-game-link'
 
 		}).then(function successCallback(response) {
 			$scope.gameLink = response.data;
@@ -15,5 +16,20 @@ appControllers.controller('gameController', [ '$scope', '$http', function($scope
 		});
 	};
 
+	var createGame = function() {
+		$http({
+			method: 'GET',
+			url: '/monopoly/create-game'
+
+		}).then(function successCallback(response) {
+			//TODO - subscribe
+
+		}, function errorCallback(response) {
+			console.log('Error: ' + response);
+		});
+	};
+
+
+	initGameLink();
 
 }]);
