@@ -24,7 +24,7 @@
 
     <div class="field">
         <!--<div ng-repeat="cell in cells" style="background:url(images/{{cell.tileName}}.gif) no-repeat;height:184px;width:184px">{{cell["cellName"]}}</div>-->
-        <div id="row1" class="row">
+        <div id="row1" class="row1">
             <div  class="tile-square"><img src="images/{{cellsMap[20].tileName}}.gif"></div>
             <div class="tile-vertical"><img src="images/{{cellsMap[21].tileName}}.gif"></div>
             <div class="tile-vertical"><img src="images/{{cellsMap[22].tileName}}.gif"></div>
@@ -37,81 +37,32 @@
             <div class="tile-vertical"><img src="images/{{cellsMap[29].tileName}}.gif"></div>
             <div class="tile-square"><img src="images/{{cellsMap[30].tileName}}.gif"></div>
         </div>
-        <div id="row2" class="row">
+        <div id="row2" class="row1">
             <div class="col-left">
-                <div class="tile-horizontal"><img src="images/{{cellsMap[19].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[18].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[17].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[16].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[15].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[14].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[13].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[12].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[11].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[19].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[18].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[17].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[16].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[15].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[14].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[13].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[12].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[11].tileName}}.gif"></div>
             </div>
             <div class="col-center"></div>
             <div class="col-right">
-                <div class="tile-horizontal"><img src="images/{{cellsMap[31].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[32].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[33].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[34].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[35].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[36].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[37].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[38].tileName}}.gif"></div>
-                <div class="tile-horizontal"><img src="images/{{cellsMap[39].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[31].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[32].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[33].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[34].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[35].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[36].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[37].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[38].tileName}}.gif"></div>
+                <div class="tile-vertical"><img src="images/{{cellsMap[39].tileName}}.gif"></div>
             </div>
-
         </div>
-        <!--		<div class="row">
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[18].tileName}}.gif"></div>
-                    <div class="col-md-9">&nbsp;</div>
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[32].tileName}}.gif"></div>
-                    <div class="col-md-1">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[17].tileName}}.gif"></div>
-                    <div class="col-md-9">&nbsp;</div>
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[33].tileName}}.gif"></div>
-                    <div class="col-md-1">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[16].tileName}}.gif"></div>
-                    <div class="col-md-9">&nbsp;</div>
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[34].tileName}}.gif"></div>
-                    <div class="col-md-1">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[15].tileName}}.gif"></div>
-                    <div class="col-md-9">&nbsp;</div>
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[35].tileName}}.gif"></div>
-                    <div class="col-md-1">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[14].tileName}}.gif"></div>
-                    <div class="col-md-9">&nbsp;</div>
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[36].tileName}}.gif"></div>
-                    <div class="col-md-1">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[13].tileName}}.gif"></div>
-                    <div class="col-md-9">&nbsp;</div>
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[37].tileName}}.gif"></div>
-                    <div class="col-md-1">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[12].tileName}}.gif"></div>
-                    <div class="col-md-9">&nbsp;</div>
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[38].tileName}}.gif"></div>
-                    <div class="col-md-1">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[11].tileName}}.gif"></div>
-                    <div class="col-md-9">&nbsp;</div>
-                    <div class="col-md-1 tile-horizontal"><img src="images/{{cellsMap[39].tileName}}.gif"></div>
-                    <div class="col-md-1">&nbsp;</div>
-                </div>-->
-        <div id="row3" class="row">
+        <div id="row3" class="row1">
             <div class="tile-square"><img src="images/{{cellsMap[10].tileName}}.gif"></div>
             <div class="tile-vertical"><img src="images/{{cellsMap[9].tileName}}.gif"></div>
             <div class="tile-vertical"><img src="images/{{cellsMap[8].tileName}}.gif"></div>
@@ -138,17 +89,17 @@
 
 
 
-    <div>Cell Map: 
-        <div ng-repeat="key in cellsMap">Key: {{key}}, Value: {{cellsMap[key]}}</div>
-    </div>
-
-    <div>Chance Map: 
-        <div ng-repeat="key in chanceMap">Key: {{key}}, Value: {{chanceMap[key]}}</div>
-    </div>
-
-    <div>Chest Map: 
-        <div ng-repeat="key in chestMap">Key: {{key}}, Value: {{chestMap[key]}}</div>
-    </div>
+    <!--    <div>Cell Map: 
+            <div ng-repeat="key in cellsMap">Key: {{key}}, Value: {{cellsMap[key]}}</div>
+        </div>
+    
+        <div>Chance Map: 
+            <div ng-repeat="key in chanceMap">Key: {{key}}, Value: {{chanceMap[key]}}</div>
+        </div>
+    
+        <div>Chest Map: 
+            <div ng-repeat="key in chestMap">Key: {{key}}, Value: {{chestMap[key]}}</div>
+        </div>-->
 
 
     <div class="chatparticipants">
