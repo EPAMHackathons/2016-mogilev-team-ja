@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.hackathon.monopoly.services;
 
-/**
- *
- * @author User
- */
+import com.hackathon.monopoly.model.GameMap;
+import com.hackathon.monopoly.model.Player;
+
+
 public interface MonopolyService {
     
+    void addPlayer(Player player);
+    
+    GameMap createGame();
+    
+    Player createPlayer(String name);
 }
