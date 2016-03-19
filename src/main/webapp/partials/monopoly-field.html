@@ -33,6 +33,22 @@
 	<div class="field">
 		<div ng-repeat="card in chest">{{card.description}}</div>
 	</div>
+	
+	
+	
+	
+	<div>Cell Map: 
+		<div ng-repeat="key in cellsMap">Key: {{key}}, Value: {{cellsMap[key]}}</div>
+	</div>
+	
+	<div>Chance Map: 
+		<div ng-repeat="key in chanceMap">Key: {{key}}, Value: {{chanceMap[key]}}</div>
+	</div>
+	
+	<div>Chest Map: 
+		<div ng-repeat="key in chestMap">Key: {{key}}, Value: {{chestMap[key]}}</div>
+	</div>
+	
 
 	<div class="chatparticipants">
 		<ul class="list-unstyled">
